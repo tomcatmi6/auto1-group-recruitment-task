@@ -35,3 +35,19 @@
       manufacturer?: string;
   };
   
+  export type ColorListOutput = {
+      colors: string[];
+  };
+
+  export type Model = {
+    name: string;
+  };
+  
+  export type Manufacturer = {
+    name: string;
+    models: Model[];
+  };
+  
+  export type ManufacturerListOutput = {
+    manufacturers: Manufacturer[];
+  };
