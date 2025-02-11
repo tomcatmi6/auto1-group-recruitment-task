@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Box,
   Card,
   CardContent,
   CardMedia,
@@ -14,29 +13,27 @@ const LoadingCarList: React.FC = () => {
     <Grid2
       key={index}
       component={"li"}
-      sx={{ listStyle: "none", width: "100%" }}
-    >
-      <Card sx={{ display: "flex", alignItems: "center", padding: 2 }}>
-        <CardMedia>
-          <Skeleton variant="rectangular" width={120} height={80} />
+      className="car-list-item">
+      <Card className="car-card" elevation={0}>
+        <CardMedia className="car-image">
+          <Skeleton variant="rectangular" width={120} height={100} />
         </CardMedia>
-
-        <CardContent sx={{ flex: 1 }}>
-          <Skeleton variant="text" width="70%" height={40} />
-          <Skeleton variant="text" width="70%" height={20} />
-          <Skeleton variant="text" width="20%" height={20} />
+        <CardContent className="car-content" sx={{ width: '100%'}}>
+          <Skeleton variant="text" width="60%" height="50px" />
+          <Skeleton variant="text" width="60%" height="35px" />
+          <Skeleton variant="text" width="15%" height="30px" />
         </CardContent>
-      </Card>
-    </Grid2>
-  ));
-
-  return (
-    <Box component={"section"} sx={{ marginTop: 2 }} width={"100%"}>
-      <h2>Available cars</h2>
-      <Stack spacing={2} component={"ul"}>
-        {loadingDummyListContent}
+            </Card>
+          </Grid2>
+        ));
+        return (
+    <Grid2 size={{ xl: 9, md: 12 }}>
+      <Stack component={"section"} gap={4} width={"100%"} className="car-list-container">
+        <Grid2 container spacing={2} component={"ul"} className="car-list">
+          {loadingDummyListContent}
+        </Grid2>
       </Stack>
-    </Box>
+    </Grid2>
   );
 };
 

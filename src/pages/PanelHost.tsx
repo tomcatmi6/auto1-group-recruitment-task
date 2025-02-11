@@ -133,7 +133,6 @@ const PanelHost: React.FC = () => {
             <Header />
             <Container
                 maxWidth="xl"
-                style={{ marginTop: "50px" }}
                 className="main-container"
                 component={"main"}
             >

@@ -19,7 +19,7 @@ const FilterForm: React.FC<{ colorList: string[], manufacturerList: Manufacturer
     };
 
     return (
-        <Grid2 size={3}>
+        <Grid2 size={{xs: "grow", sm: 12, md: 12, xl: 3}}>
             <Box
                 component="form"
                 className='filter-form'
@@ -35,12 +35,18 @@ const FilterForm: React.FC<{ colorList: string[], manufacturerList: Manufacturer
                                 onChange={handleColorChange}
                                 displayEmpty
                                 fullWidth
+                                MenuProps={{
+                                    PaperProps: {
+                                      className: "filter-form-select-menu",
+                                      elevation: 0,
+                                    },
+                                  }}
                             >
-                                <MenuItem value="">
+                                <MenuItem value="" className='filter-form-select-menu-item'>
                                     All car colors
                                 </MenuItem>
                                 {colorList.map((color) => (
-                                    <MenuItem key={color} value={color}>{color}</MenuItem>
+                                    <MenuItem key={color} value={color} className='filter-form-select-menu-item'>{color}</MenuItem>
                                 ))}
                             </Select>
                         }
@@ -58,12 +64,18 @@ const FilterForm: React.FC<{ colorList: string[], manufacturerList: Manufacturer
                                 onChange={handleManufacturerChange}
                                 displayEmpty
                                 fullWidth
+                                MenuProps={{
+                                    PaperProps: {
+                                      className: "filter-form-select-menu",
+                                      elevation: 0,
+                                    },
+                                  }}
                             >
-                                <MenuItem value="">
+                                <MenuItem value="" className='filter-form-select-menu-item'>
                                     All Manufacturers
                                 </MenuItem>
                                 {manufacturerList.map((manufacturer) => (
-                                    <MenuItem key={manufacturer.name} value={manufacturer.name}>{manufacturer.name}</MenuItem>
+                                    <MenuItem key={manufacturer.name} value={manufacturer.name} className='filter-form-select-menu-item'>{manufacturer.name}</MenuItem>
                                 ))}
                             </Select>
                         }

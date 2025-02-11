@@ -9,7 +9,6 @@
   /* Typography */
   --font-primary: "Roboto", sans-serif;
   --font-size-lg: 32px;
-  --font-size-md-bold: 18px;
   --font-size-md: 18px;
   --font-size-sm: 14px;
   --font-size-xs: 12px;
@@ -44,7 +43,8 @@ html, body, #root {
   height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--color-dark-gray)
+  color: var(--color-dark-gray);
+  font-family: var(--font-primary);
 }
 
 .layout {
@@ -118,6 +118,20 @@ html, body, #root {
   border-color: var(--color-light-gray);
 }
 
+.filter-form-select-menu.MuiMenu-paper {
+  margin-top: 0.5rem;
+  border: thin solid var(--color-light-gray);
+  border-radius: 0;
+}
+.filter-form-select-menu .MuiMenu-list {
+  padding: 0;
+}
+
+.filter-form-select-menu .filter-form-select-menu-item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-main-background);
+}
+
 .filter-form .filter-form-select .MuiSelect-icon {
   color: var(--color-light-gray);
   font-size: 2.5rem;
@@ -126,6 +140,7 @@ html, body, #root {
 .filter-form .filter-form-select .MuiOutlinedInput-notchedOutline {
 border: thin solid var(--color-light-gray);;
 }
+
 .filter-form .MuiFormControlLabel-label {
   margin-bottom: 0.5rem;
 }
@@ -148,6 +163,92 @@ border: thin solid var(--color-light-gray);;
   background-color: var(--color-secondary);
 }
 
+.car-list-container .main-heading {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.car-list-container .sub-heading {
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+}
+.car-list-container .car-list-info {
+  font-size: var(--font-size-md);
+}
+
+.car-list .car-list-item {
+  list-style: none;
+  width: 100%;
+}
+
+.car-list .car-list-item.favourite {
+ position: relative;
+}
+.car-list .car-list-item.favourite .car-card {
+  border-color: var(--color-primary);
+  position: relative;
+}
+.car-list .car-list-item.favourite::after {
+  content: "★";
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.car-list .car-list-item .car-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: thin solid var(--color-light-gray);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--color-dark-gray);
+}
+
+.car-card .car-image {
+  max-width: 120px;
+  object-fit: cover;
+}
+.car-card .car-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+}
+
+.car-card .car-content:last-child {
+  padding-bottom: 0;
+}
+
+.car-list-container .text-button {
+  font-size: var(--font-size-md);
+  text-transform: none;
+  color: var(--color-primary);
+  padding: 0;
+}
+
+.car-list-container .text-button:active {
+  color: var(--color-secondary);
+}
+
+.car-list-container .text-button:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  text-transform: none;
+}
 
 .sr-only {
   position: absolute;
