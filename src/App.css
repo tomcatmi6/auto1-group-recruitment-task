@@ -90,12 +90,64 @@ html, body, #root {
 }
 
 .main-container {
-  flex-grow: 1; /* Fills remaining space */
+  flex-grow: 1; 
   display: flex;
   align-items: stretch;
   justify-content: center;
   padding: var(--spacing-lg);
 }
+
+.main-container .filter-form {
+  display: flex;
+  gap: var(--spacing-md);
+  border: thin solid var(--color-light-gray);
+  border-radius: 0;
+  padding: var(--spacing-lg);
+  flex-direction: column;
+}
+
+.filter-form .filter-form-label {
+  align-items: flex-start;
+  margin: 0;
+  border-radius: 0;
+}
+
+.filter-form .filter-form-select {
+  width: 100%;
+  border-radius: 0;
+  border-color: var(--color-light-gray);
+}
+
+.filter-form .filter-form-select .MuiSelect-icon {
+  color: var(--color-light-gray);
+  font-size: 2.5rem;
+}
+
+.filter-form .filter-form-select .MuiOutlinedInput-notchedOutline {
+border: thin solid var(--color-light-gray);;
+}
+.filter-form .MuiFormControlLabel-label {
+  margin-bottom: 0.5rem;
+}
+
+.filter-form .filter-form-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.filter-form .filter-form-button {
+  border-radius: 0;
+  background-color: var(--color-primary);
+  padding: 0.5rem 4rem;
+  color: var(--color-main-background);
+  text-transform: unset;
+}
+
+.filter-form .filter-form-button:active {
+  background-color: var(--color-secondary);
+}
+
 
 .sr-only {
   position: absolute;

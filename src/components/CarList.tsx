@@ -29,6 +29,7 @@ const CarList: React.FC<CarListProps> = ({
   console.log(carListWithMetadata, "sdsd");
 
   return (
+    <Grid2 size={9}>
     <Box component={"section"} sx={{ marginTop: 2 }} width={"100%"}>
       <h2>Available cars</h2>
       <p>
@@ -102,6 +103,7 @@ const CarList: React.FC<CarListProps> = ({
         </button>
       </div>
     </Box>
+    </Grid2>
   );
 };
 

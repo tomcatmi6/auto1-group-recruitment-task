@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Container } from "@mui/material";
+import { Container, Grid2 } from "@mui/material";
 import CarList from "../components/CarList";
 import { CarListQueryParams, CarListWithMetadata, ColorListOutput, Manufacturer, ManufacturerListOutput } from "../types/car";
 import CarDetails from "../components/CarDetails";
@@ -137,10 +137,13 @@ const PanelHost: React.FC = () => {
                 className="main-container"
                 component={"main"}
             >
+                <Grid2 container spacing={3}>
+                   
                 {selectedCarIndex === undefined && (
                     <FilterForm colorList={colorList} manufacturerList={manufacturerList} currentQueryParams={carListQueryParams} onSubmitFilter={onFilterSubmit}/>
                 )}
                 {renderPageContent()}
+                </Grid2>
             </Container>
             <Footer />
         </>
