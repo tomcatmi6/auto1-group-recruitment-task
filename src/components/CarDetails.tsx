@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
 import {
-  Card,
-  CardContent,
-  CardMedia,
   Box,
   Button,
   Typography,
@@ -91,6 +88,7 @@ const CarDetails: React.FC<{ car: Car; onDetailsClose(): void }> = ({
             <Button
               variant="contained"
               className="filter-form-button details"
+              data-testid="favourite-button"
               onClick={() => handleFavouriteAction(car)}
             >
               {isFavourite ? "Remove" : "Save"}

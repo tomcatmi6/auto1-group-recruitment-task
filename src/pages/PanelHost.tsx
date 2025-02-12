@@ -1,8 +1,9 @@
+import { Grid2 } from "@mui/material";
 import React, { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { Container, Grid2 } from "@mui/material";
+import CarDetails from "../components/CarDetails";
 import CarList from "../components/CarList";
+import FilterForm from "../components/FilterForm";
+import LoadingCarList from "../components/LoadingCarList";
 import {
   CarListQueryParams,
   CarListWithMetadata,
@@ -10,9 +11,6 @@ import {
   Manufacturer,
   ManufacturerListOutput,
 } from "../types/car";
-import CarDetails from "../components/CarDetails";
-import LoadingCarList from "../components/LoadingCarList";
-import FilterForm from "../components/FilterForm";
 
 const PanelHost: React.FC = () => {
   const [carListWithMetadata, setCarListWithMetadata] = React.useState<
@@ -62,7 +60,7 @@ const PanelHost: React.FC = () => {
       const data: ColorListOutput = await response.json();
       setColorList(data.colors);
     } catch (error: any) {
-      setError(error);
+      setError('Network error');
     } finally {
       setLoading(false);
     }
@@ -77,7 +75,7 @@ const PanelHost: React.FC = () => {
       const data: ManufacturerListOutput = await response.json();
       setManufacturerList(data.manufacturers);
     } catch (error: any) {
-      setError(error);
+      setError('Network error');
     } finally {
       setLoading(false);
     }
@@ -92,7 +90,7 @@ const PanelHost: React.FC = () => {
       const data: CarListWithMetadata = await response.json();
       setCarListWithMetadata(data);
     } catch (error: any) {
-      setError(error);
+      setError('Network error');
     } finally {
       setLoading(false);
     }
@@ -115,6 +113,7 @@ const PanelHost: React.FC = () => {
     if (error) {
       return <h2>{error}</h2>;
     }
+
     if (selectedCarIndex !== undefined && carListWithMetadata?.cars) {
       const selectedCar = carListWithMetadata.cars[selectedCarIndex];
       return (

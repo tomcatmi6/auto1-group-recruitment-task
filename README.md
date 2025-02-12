@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+Recruitment task from Auto1Group. 
+List of cars written in React + Typescript with Vite. 
+It contains of menu for filtering cars by color and manufacturer, list has pagination.
+You can add car to favourites stored in localstorage so they persist and you can add/remove them.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Non-technical requirements
 
-Currently, two official plugins are available:
+The application must meet the following requirements:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Retrieve a list of cars based on applied filters and pagination.
+- Implement pagination with a limit of 10 cars per page.
+- Enable users to filter cars by manufacturer or color.
+- Display detailed information for a selected car.
+- **Bonus**: Allow users to add or remove cars from their favorites collection using local storage.
 
-## Expanding the ESLint configuration
+# Technical requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Create a SPA using latest **ReactJS**
+- Use **vite** to setup app
+- Use best practices with hooks
+- Add tests (with [react-testing-library](https://testing-library.com/docs/react-testing-library/intro))
+- Pixel-perfect design is not required.
+- __Bonus__  Static type checking (TS or Flow)
 
-- Configure the top-level `parserOptions` property like this:
+# Please avoid
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Copying any functionality from other projects
+- Deep project structure, ideally only 2 levels are allowed
+- Premature optimization

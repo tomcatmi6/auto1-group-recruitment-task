@@ -28,8 +28,6 @@ const CarList: React.FC<CarListProps> = ({
   onCarSelect,
 }) => {
   const { cars } = carListWithMetadata || [];
-  console.log(cars, "sdsd");
-  console.log(carListWithMetadata, "sdsd");
 
   return (
     <Grid2 size={{ xl: 9, md: 12 }}>

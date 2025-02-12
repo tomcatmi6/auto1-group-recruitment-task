@@ -13,12 +13,12 @@ const LoadingCarList: React.FC = () => {
     <Grid2 key={index} component={"li"} className="car-list-item">
       <Card className="car-card" elevation={0}>
         <CardMedia className="car-image">
-          <Skeleton variant="rectangular" width={120} height={100} />
+          <Skeleton variant="rectangular" width={120} height={100} data-testid="image-skeleton"/>
         </CardMedia>
         <CardContent className="car-content" sx={{ width: "100%" }}>
-          <Skeleton variant="text" width="60%" height="50px" />
-          <Skeleton variant="text" width="60%" height="35px" />
-          <Skeleton variant="text" width="15%" height="30px" />
+          <Skeleton variant="text" width="60%" height="50px" data-testid="text-skeleton"/>
+          <Skeleton variant="text" width="60%" height="35px" data-testid="text-skeleton"/>
+          <Skeleton variant="text" width="15%" height="30px" data-testid="text-skeleton"/>
         </CardContent>
       </Card>
     </Grid2>

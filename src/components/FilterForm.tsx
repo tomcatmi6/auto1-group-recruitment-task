@@ -5,7 +5,6 @@ import {
   FormControl,
   FormControlLabel,
   Grid2,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -44,14 +43,17 @@ const FilterForm: React.FC<{
             labelPlacement="top"
             control={
               <Select
-                className="filter-form-select"
-                value={color}
-                onChange={handleColorChange}
-                displayEmpty
-                fullWidth
+              className="filter-form-select"
+              value={color}
+              onChange={handleColorChange}
+              displayEmpty
+              data-testid="color-select"
+              fullWidth
                 MenuProps={{
+                  disablePortal: true,
                   PaperProps: {
                     className: "filter-form-select-menu",
+                    "data-testid": "color-select-menu",
                     elevation: 0,
                   },
                 }}
@@ -62,6 +64,7 @@ const FilterForm: React.FC<{
                 {colorList.map((color) => (
                   <MenuItem
                     key={color}
+                    data-testid={`color-select-item-${color}`}
                     value={color}
                     className="filter-form-select-menu-item"
                   >
@@ -84,19 +87,28 @@ const FilterForm: React.FC<{
                 onChange={handleManufacturerChange}
                 displayEmpty
                 fullWidth
+                data-testid="manufacturer-select"
                 MenuProps={{
+                  disablePortal: true,
+                  MenuListProps: {
+                    className: "filter-form-manufacturer-select-menu-list",
+                  },
                   PaperProps: {
                     className: "filter-form-select-menu",
+                    props: {
+                      "data-testid": "manufacturer-select-menu",
+                    },
                     elevation: 0,
                   },
                 }}
               >
-                <MenuItem value="" className="filter-form-select-menu-item">
+                <MenuItem value="" data-testid={`manufacturer-select-item-all-manufacturers`} className="filter-form-select-menu-item">
                   All Manufacturers
                 </MenuItem>
                 {manufacturerList.map((manufacturer) => (
                   <MenuItem
                     key={manufacturer.name}
+                    data-testid={`manufacturer-select-item-${manufacturer.name}`}
                     value={manufacturer.name}
                     className="filter-form-select-menu-item"
                   >
@@ -112,6 +124,7 @@ const FilterForm: React.FC<{
           <Button
             variant="contained"
             className="filter-form-button"
+            data-testid="filter-button"
             onClick={() => submitFilter(color, manufacturer)}
           >
             Filter
