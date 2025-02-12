@@ -44,15 +44,28 @@ const CarDetails: React.FC<{ car: Car; onDetailsClose(): void }> = ({
 
   return (
     <Stack className="car-details" gap={4}>
-      <Button variant="contained" color="primary" className="close-button" onClick={() => onDetailsClose()}>Close</Button>
+      <Button
+        variant="contained"
+        color="primary"
+        className="close-button"
+        onClick={() => onDetailsClose()}
+      >
+        Close
+      </Button>
       <Box
         component="img"
         src={car.pictureUrl}
         alt={`${car.manufacturerName} ${car.modelName}`}
         className="car-details-image"
       />
-      <Grid2 container maxWidth={800} className="car-content details" columnSpacing={4} rowSpacing={4}>
-        <Grid2 size={{sm: 12, md:6}}>
+      <Grid2
+        container
+        maxWidth={800}
+        className="car-content details"
+        columnSpacing={4}
+        rowSpacing={4}
+      >
+        <Grid2 size={{ sm: 12, md: 6 }}>
           <Stack spacing={4}>
             <Typography component="h2" variant="h2" className="main-heading">
               {car.manufacturerName} {car.modelName}
@@ -69,7 +82,7 @@ const CarDetails: React.FC<{ car: Car; onDetailsClose(): void }> = ({
             </Typography>
           </Stack>
         </Grid2>
-        <Grid2 size={{sm: 12, md:6}}>
+        <Grid2 size={{ sm: 12, md: 6 }}>
           <Stack spacing={2} className="car-details-favourite">
             <Typography component={"p"} className="car-list-info">
               If you like this car, click the button and save it in your

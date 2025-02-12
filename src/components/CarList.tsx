@@ -50,7 +50,11 @@ const CarList: React.FC<CarListProps> = ({
             <Grid2
               key={car.stockNumber + index}
               component={"li"}
-              className={`car-list-item ${isFavouriteCar(car.manufacturerName, car.stockNumber) ? "favourite" : ""}`}
+              className={`car-list-item ${
+                isFavouriteCar(car.manufacturerName, car.stockNumber)
+                  ? "favourite"
+                  : ""
+              }`}
             >
               <Card className="car-card" elevation={0}>
                 <CardMedia
